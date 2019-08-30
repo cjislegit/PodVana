@@ -10,9 +10,13 @@ html {
   font-weight: 100;
 }
 
+/* Nav Styles */
+
 nav {
   background-color: #38333f;
   padding: 5px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 nav ul {
@@ -33,5 +37,35 @@ nav a {
 
 nav i {
   float: right;
-  padding-right: 15px;
+  padding-right: 30px;
+}
+
+/* Search Styles */
+
+section.search {
+  background-color: #38333f;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+section.search div {
+  width: 45%;
+  display: inline-block;
+  box-sizing: border-box;
+}
+
+section div.searchBar {
+  background-color: #64667f;
+  border-radius: 50px;
+  float: center;
+}
+
+section div.searchBar input {
+  background-color: #64667f;
+  border: none;
+}
+
+section.search i:last-child {
+  float: right;
 }
