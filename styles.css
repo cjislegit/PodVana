@@ -74,3 +74,8 @@ section div.searchBar input {
   color: inherit;
   outline: none;
 }
+
+section div:last-child {
+  display: grid;
+  align-items: center;
+}
