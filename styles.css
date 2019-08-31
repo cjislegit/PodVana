@@ -15,6 +15,7 @@ html {
 nav {
   background-color: #38333f;
   padding: 5px;
+  padding-top: 20px;
   width: 100%;
   box-sizing: border-box;
 }
@@ -46,26 +47,30 @@ section.search {
   background-color: #38333f;
   width: 100%;
   box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 90% 10%;
   margin: 0 auto;
-}
-
-section.search div {
-  width: 45%;
-  display: inline-block;
-  box-sizing: border-box;
+  padding-top: 25px;
+  padding-bottom: 15px;
 }
 
 section div.searchBar {
   background-color: #64667f;
   border-radius: 50px;
-  float: center;
+  width: 75%;
+  justify-self: center;
+  height: 35px;
+  padding-left: 15px;
+  box-sizing: border-box;
 }
 
 section div.searchBar input {
   background-color: #64667f;
   border: none;
-}
-
-section.search i:last-child {
-  float: right;
+  height: 100%;
+  width: 90%;
+  border-radius: 50px;
+  box-sizing: border-box;
+  color: inherit;
+  outline: none;
 }
