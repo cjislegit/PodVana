@@ -13,7 +13,7 @@ html {
 /* Nav Styles */
 
 nav {
-  background-color: #38333f;
+  background-color: #28303b;
   padding: 5px;
   padding-top: 20px;
   width: 100%;
@@ -44,7 +44,7 @@ nav i {
 /* Search Styles */
 
 section.search {
-  background-color: #38333f;
+  background-color: #28303b;
   width: 100%;
   box-sizing: border-box;
   display: grid;
@@ -78,4 +78,29 @@ section div.searchBar input {
 section div:last-child {
   display: grid;
   align-items: center;
+}
+
+/* Main Section */
+
+main {
+  box-sizing: border-box;
+  width: 100%;
+  background-color: #28303b;
+  height: 50vh;
+  margin: 0 auto;
+}
+
+main div.mainContainer {
+  box-sizing: border-box;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 25% 25% 25%;
+  justify-content: center;
+}
+
+main div.podCast {
+}
+
+main img {
+  width: 100%;
 }
