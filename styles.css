@@ -89,7 +89,7 @@ main {
   margin: 0 auto;
   overflow-y: auto;
   padding-top: 10px;
-  height: 100vh;
+  /* height: 100vh; */
 }
 
 main div.mainContainer {
@@ -102,9 +102,6 @@ main div.mainContainer {
   grid-row-gap: 10px;
 }
 
-main div.podCast {
-}
-
 main img {
   width: 100%;
   height: 100px;
@@ -112,4 +109,20 @@ main img {
 
 main p {
   margin: 0;
+}
+
+/* Now Playing Section */
+
+.nowPlaying {
+  background-color: #28303b;
+}
+
+.nowPlayingContainer {
+  display: grid;
+  grid-template-columns: 100px auto auto;
+}
+
+.nowPlaying img {
+  width: 80px;
+  height: 80px;
 }
