@@ -115,6 +115,10 @@ main p {
 
 .nowPlaying {
   background-color: #28303b;
+  position: absolute;
+  bottom: 0;
+  height: 70px;
+  width: 100vw;
 }
 
 .nowPlayingContainer {
