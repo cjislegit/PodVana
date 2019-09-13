@@ -89,7 +89,7 @@ main {
   margin: 0 auto;
   overflow-y: auto;
   padding-top: 10px;
-  /* height: 100vh; */
+  height: 80vh;
 }
 
 main div.mainContainer {
