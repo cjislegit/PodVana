@@ -119,6 +119,7 @@ main p {
   background-color: #28303b;
   position: absolute;
   bottom: 0;
+  box-sizing: border-box;
   height: 80px;
   width: 100vw;
 }
@@ -126,9 +127,14 @@ main p {
 .nowPlayingContainer {
   display: grid;
   grid-template-columns: 100px auto auto;
+  max-height: 80px;
 }
 
 .nowPlaying img {
   width: 80px;
+  height: 80px;
+}
+
+.nowPlayingArt {
   height: 80px;
 }
