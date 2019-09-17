@@ -16,8 +16,6 @@ html {
 
 nav {
   background-color: #28303b;
-  padding: 5px;
-  padding-top: 20px;
   width: 100%;
   box-sizing: border-box;
 }
@@ -31,6 +29,7 @@ nav ul {
 nav li {
   width: 24%;
   display: inline-block;
+  padding-top: 10px;
 }
 
 nav a {
@@ -41,6 +40,10 @@ nav a {
 nav i {
   float: right;
   padding-right: 30px;
+}
+
+nav .podcasts {
+  border-top: solid #39a5a5;
 }
 
 /* Search Styles */
