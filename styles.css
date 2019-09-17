@@ -134,6 +134,6 @@ main p {
   height: 80px;
 }
 
-.nowPlayingArt {
-  height: 80px;
+.nowPlayingStatusIcon {
+  text-align: center;
 }
