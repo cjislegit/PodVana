@@ -42,7 +42,7 @@ nav i {
   padding-right: 30px;
 }
 
-nav .podcasts {
+nav .active {
   border-top: solid #39a5a5;
 }
 
@@ -125,6 +125,8 @@ main p {
   box-sizing: border-box;
   height: 80px;
   width: 100vw;
+  max-width: 100%;
+  width: 500px;
 }
 
 .nowPlayingContainer {
@@ -140,3 +142,7 @@ main p {
 .nowPlayingStatusIcon {
   text-align: center;
 }
+
+/* Subscribed Styles */
+
+/* Subscribed Nav Styles */
