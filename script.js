@@ -2,7 +2,7 @@ const apiData = {
   url: 'https://itunes.apple.com/search?',
   term: 'term=joe+rogan',
   media: '&media=podcast',
-  limit: '&limit=1'
+  limit: '&limit=15'
 };
 
 const { url, term, media, limit } = apiData;
@@ -14,15 +14,19 @@ fetch(apiURL)
   .then(podcast => generateMainContentHTML(podcast));
 
 const generateMainContentHTML = podcast => {
-  console.log(podcast['results'][0]['artistName']);
-  console.log(podcast['results'][0]['artworkUrl100']);
+  podcast['results'].forEach(element => {
+    console.log(element['artistName']);
+  });
 
-  const mainContentPodcast = `<div class="podCast">
-          <img src="${podcast['results'][0]['artworkUrl100']}" />
-          <p>${podcast['results'][0]['artistName']}</p>
-        </div>`;
+  const mainContentPodcast = document.createElement('div'); //Creates div
+  mainContentPodcast.setAttribute('class', 'podCast'); //Gives div class of podCast
+  mainContentPodcast.innerHTML = `<img src="${
+    //Creates the inside of the div
+    podcast['results'][0]['artworkUrl100']
+  }" />
+          <p>${podcast['results'][0]['artistName']}</p>`;
 
   const mainContainerDiv = document.querySelector('.mainContainer');
 
-  mainContainerDiv.innerHTML = mainContentPodcast;
+  mainContainerDiv.appendChild(mainContentPodcast);
 };
