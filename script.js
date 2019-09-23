@@ -19,9 +19,9 @@ const generateMainContentHTML = podcast => {
     mainContentPodcast.setAttribute('class', 'podCast'); //Gives div class of podCast
     mainContentPodcast.innerHTML = `<img src="${
       //Creates the inside of the div
-      podcast['results'][0]['artworkUrl100']
+      element['artworkUrl100']
     }" />
-          <p>${podcast['results'][0]['artistName']}</p>`;
+          <p>${element['artistName']}</p>`;
 
     const mainContainerDiv = document.querySelector('.mainContainer');
 
