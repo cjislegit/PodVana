@@ -17,10 +17,10 @@ const generateMainContentHTML = podcast => {
   podcast['results'].forEach(element => {
     const mainContentPodcast = document.createElement('div'); //Creates div
     mainContentPodcast.setAttribute('class', 'podCast'); //Gives div class of podCast
-    mainContentPodcast.innerHTML = `<img src="${
+    mainContentPodcast.innerHTML = `<a href='podcast.html'><img src="${
       //Creates the inside of the div
       element['artworkUrl100']
-    }" />
+    }" /></a>
           <p>${element['artistName'].slice(0, 20)}</p>`;
 
     const mainContainerDiv = document.querySelector('.mainContainerPodcasts');
