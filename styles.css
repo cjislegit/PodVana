@@ -90,11 +90,11 @@ section div:last-child {
 main {
   box-sizing: border-box;
   background-color: #28303b;
-  height: 50vh;
   margin: 0 auto;
   overflow-y: auto;
   padding-top: 10px;
-  height: 80vh;
+  height: 77vh;
+  padding-bottom: 10px;
 }
 
 main div.mainContainer {
