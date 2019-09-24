@@ -21,7 +21,7 @@ const generateMainContentHTML = podcast => {
       //Creates the inside of the div
       element['artworkUrl100']
     }" />
-          <p>${element['artistName']}</p>`;
+          <p>${element['artistName'].slice(0, 20)}</p>`;
 
     const mainContainerDiv = document.querySelector('.mainContainer');
 
