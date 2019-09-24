@@ -1,6 +1,6 @@
 const apiData = {
   url: 'https://itunes.apple.com/search?',
-  term: 'term=joe+rogan',
+  term: 'term=c',
   media: '&media=podcast',
   limit: '&limit=15'
 };
@@ -23,7 +23,7 @@ const generateMainContentHTML = podcast => {
     }" />
           <p>${element['artistName'].slice(0, 20)}</p>`;
 
-    const mainContainerDiv = document.querySelector('.mainContainer');
+    const mainContainerDiv = document.querySelector('.mainContainerPodcasts');
 
     mainContainerDiv.appendChild(mainContentPodcast);
   });
