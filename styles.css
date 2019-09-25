@@ -161,3 +161,8 @@ main div.podcastContainer {
   grid-template-columns: auto;
   grid-template-rows: auto;
 }
+
+main .podcastArt img {
+  height: 30vh;
+  width: 70vw;
+}
