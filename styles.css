@@ -156,3 +156,8 @@ main p {
   padding-bottom: 0;
   overflow-y: visible;
 }
+
+main div.podcastContainer {
+  grid-template-columns: auto;
+  grid-template-rows: auto;
+}
