@@ -143,6 +143,7 @@ main p {
   text-align: center;
 }
 
-/* Subscribed Styles */
-
-/* Subscribed Nav Styles */
+/* Podcast  Styles */
+.podcast li {
+  padding-bottom: 10px;
+}
