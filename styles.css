@@ -144,6 +144,15 @@ main p {
 }
 
 /* Podcast  Styles */
+
+/* Header Styles */
 .podcast li {
   padding-bottom: 10px;
+}
+
+/* Main Styles */
+.mainPodcast {
+  height: 86vh;
+  padding-bottom: 0;
+  overflow-y: visible;
 }
