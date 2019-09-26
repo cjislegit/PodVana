@@ -166,3 +166,9 @@ main .podcastArt img {
   height: 250px;
   width: 250px;
 }
+
+main .podcastTracksContainer {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto;
+}
