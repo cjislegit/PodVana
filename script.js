@@ -1,5 +1,5 @@
 const apiData = {
-  url: 'https://itunes.apple.com/search?',
+  url: 'https://cors-anywhere.herokuapp.com/https://itunes.apple.com/search?',
   term: 'term=c',
   media: '&media=podcast',
   limit: '&limit=15'
