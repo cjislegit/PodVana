@@ -163,6 +163,6 @@ main div.podcastContainer {
 }
 
 main .podcastArt img {
-  height: 30vh;
-  width: 70vw;
+  height: 250px;
+  width: 250px;
 }
