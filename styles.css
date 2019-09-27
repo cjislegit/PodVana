@@ -154,7 +154,7 @@ main p {
 .mainPodcast {
   height: 86vh;
   padding-bottom: 0;
-  overflow-y: visible;
+  overflow-y: auto;
 }
 
 main div.podcastContainer {
