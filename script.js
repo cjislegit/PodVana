@@ -27,16 +27,4 @@ const generateMainContentHTML = podcast => {
 
     mainContainerDiv.appendChild(mainContentPodcast);
   });
-
-  // const mainContentPodcast = document.createElement('div'); //Creates div
-  // mainContentPodcast.setAttribute('class', 'podCast'); //Gives div class of podCast
-  // mainContentPodcast.innerHTML = `<img src="${
-  //   //Creates the inside of the div
-  //   podcast['results'][0]['artworkUrl100']
-  // }" />
-  //         <p>${podcast['results'][0]['artistName']}</p>`;
-
-  // const mainContainerDiv = document.querySelector('.mainContainer');
-
-  // mainContainerDiv.appendChild(mainContentPodcast);
 };
