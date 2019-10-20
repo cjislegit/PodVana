@@ -1,10 +1,3 @@
-const apiData = {
-  url: 'https://cors-anywhere.herokuapp.com/https://itunes.apple.com/search?',
-  term: 'term=c',
-  media: '&media=podcast',
-  limit: '&limit=15'
-};
-
 const newApiUrl =
   'https://listen-api.listennotes.com/api/v2/best_podcasts?region=us&safe_mode=1&page=1';
 
@@ -36,12 +29,4 @@ const generateMainContentHTML = podcast => {
 
     mainContainerDiv.appendChild(mainContentPodcast);
   });
-};
-
-fetch(req)
-  .then(data => data.json())
-  .then(podcast => newApitTest(podcast));
-
-const newApitTest = podcast => {
-  console.log(podcast['podcasts'][0]);
 };
