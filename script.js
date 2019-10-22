@@ -28,3 +28,7 @@ const generateMainContentHTML = podcast => {
     mainContainerDiv.appendChild(mainContentPodcast);
   });
 };
+
+document
+  .getElementByClass('podCast')
+  .addEventListener('click', console.log('hello'));
