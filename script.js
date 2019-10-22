@@ -15,7 +15,9 @@ const generateMainContentHTML = podcast => {
   podcast['podcasts'].forEach(element => {
     const mainContentPodcast = document.createElement('div'); //Creates div
     mainContentPodcast.setAttribute('class', 'podCast'); //Gives div class of podCast
-    mainContentPodcast.innerHTML = `<a href='podcast.html'><img src="${
+    mainContentPodcast.innerHTML = `<a href='podcast.html'><img id='${
+      element['id']
+    }' src="${
       //Creates the inside of the div
       element['image']
     }" /></a>
