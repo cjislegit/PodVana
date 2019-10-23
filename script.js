@@ -15,9 +15,10 @@ const generateMainContentHTML = podcast => {
   podcast['podcasts'].forEach(element => {
     const mainContentPodcast = document.createElement('div'); //Creates div
     mainContentPodcast.setAttribute('class', 'podCast'); //Gives div class of podCast
-    mainContentPodcast.innerHTML = `<a href='podcast.html'><img id='${
-      element['id']
-    }' src="${
+    let id = element['id'];
+    mainContentPodcast.setAttribute('id', id); //Gives div id of podcast id from API
+    mainContentPodcast.setAttribute('onclick', 'getPodcastId(id)');
+    mainContentPodcast.innerHTML = `<a href='podcast.html' ><img src="${
       //Creates the inside of the div
       element['image']
     }" /></a>
@@ -29,6 +30,6 @@ const generateMainContentHTML = podcast => {
   });
 };
 
-document
-  .getElementByClass('podCast')
-  .addEventListener('click', console.log('hello'));
+const getPodcastId = id => {
+  console.log(id);
+};
