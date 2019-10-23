@@ -1,13 +1,17 @@
-const newApiUrl =
+const ApiUrl =
   'https://listen-api.listennotes.com/api/v2/best_podcasts?region=us&safe_mode=1&page=1';
 
 const h = new Headers();
 
 h.append('X-ListenAPI-Key', '776c9171dbbc4181aad650262761ceaa');
 
-const req = new Request(newApiUrl, { method: 'GET', headers: h, mode: 'cors' });
+const reqbestPodcasts = new Request(ApiUrl, {
+  method: 'GET',
+  headers: h,
+  mode: 'cors'
+});
 
-fetch(req)
+fetch(reqbestPodcasts)
   .then(data => data.json())
   .then(podcast => generateMainContentHTML(podcast));
 
@@ -30,6 +34,13 @@ const generateMainContentHTML = podcast => {
   });
 };
 
+const podcastURL = 'https://listen-api.listennotes.com/api/v2/podcasts/';
+
 const getPodcastId = id => {
-  console.log(id);
+  let podcastUrlAndID = podcastURL + id;
+  generatePodcastHTML(podcastUrlAndID);
+};
+
+const generatePodcastHTML = podcast => {
+  console.log(podcast);
 };
