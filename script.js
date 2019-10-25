@@ -21,7 +21,7 @@ const generateMainContentHTML = podcast => {
     mainContentPodcast.setAttribute('class', 'podCast'); //Gives div class of podCast
     let id = element['id'];
     mainContentPodcast.setAttribute('id', id); //Gives div id of podcast id from API
-    mainContentPodcast.setAttribute('onclick', 'getPodcastId(id)');
+    mainContentPodcast.setAttribute('onclick', 'saveIdtoLocalStorage(id)');
     mainContentPodcast.innerHTML = `<a  href='podcast.html' ><img src="${
       //Creates the inside of the div
       element['image']
@@ -34,26 +34,6 @@ const generateMainContentHTML = podcast => {
   });
 };
 
-const podcastURL = 'https://listen-api.listennotes.com/api/v2/podcasts/';
-
-const getPodcastId = id => {
-  let podcastUrlAndID = podcastURL + id;
-  callPodcastAPI(podcastUrlAndID);
-};
-
-const callPodcastAPI = podcast => {
-  const reqPodcasts = new Request(podcast, {
-    method: 'GET',
-    headers: h,
-    mode: 'cors'
-  });
-
-  fetch(reqPodcasts)
-    .then(data => data.json())
-    .then(podcast => generatePodcastHTML(podcast));
-};
-
-const generatePodcastHTML = podcast => {
-  let img = podcast['image'];
-  document.getElementsByClassName('podcastArtImg').setAttribute('src', img);
+const saveIdtoLocalStorage = id => {
+  localStorage.setItem('objectToPass', id);
 };
