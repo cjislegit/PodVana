@@ -14,12 +14,21 @@ const reqPodcasts = new Request(podcastURL, {
 });
 fetch(reqPodcasts)
   .then(data => data.json())
-  .then(podcast => generatePodcastHTML(podcast));
+  .then(podcast => generatePodcastImgHTML(podcast));
 
-const generatePodcastHTML = podcast => {
+const generatePodcastImgHTML = podcast => {
   let img = podcast['image'];
+  let episodes = podcast['episodes'];
   const podCastImg = document.createElement('img'); //Creates img
-  podCastImg.setAttribute('src', img);
-  const podcastArt = document.querySelector('.podcastArt');
-  podcastArt.appendChild(podCastImg);
+  podCastImg.setAttribute('src', img); //Sets src to img url
+  const podcastArt = document.querySelector('.podcastArt'); //Gets the podcast img container
+  podcastArt.appendChild(podCastImg); //Adds img to the container
+
+  generatePodcastTracksHTML(episodes);
+};
+
+const generatePodcastTracksHTML = podcast => {
+  podcast.forEach(track => {
+    console.log(track);
+  });
 };
