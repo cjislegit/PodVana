@@ -29,6 +29,21 @@ const generatePodcastImgHTML = podcast => {
 
 const generatePodcastTracksHTML = podcast => {
   podcast.forEach(track => {
-    console.log(track);
+    const podcastTracksContainer = document.createElement('div');
+    const podcastTrackName = document.createElement('div');
+    const podcastTrackLength = document.createElement('div');
+    const podcastTrackDate = document.createElement('div');
+    const podcastTrackStatus = document.createElement('div');
+    const podcastTrackStatusIcon = document.createElement('i');
+
+    podcastTracksContainer.setAttribute('class', 'podcastTracksContainer');
+    podcastTrackName.setAttribute('class', 'podcastTrackName');
+    podcastTrackLength.setAttribute('class', 'podcastTrackLength');
+    podcastTrackDate.setAttribute('class', 'podcastTrackDate');
+    podcastTrackStatus.setAttribute('class', 'podcastTrackStatus');
+    podcastTrackStatusIcon.setAttribute('class', 'podcastTrackStatusIcon');
+
+    podcastTracksContainer.append(podcastTrackName);
+    podcastTrackName.append(podcastTrackLength);
   });
 };
