@@ -38,6 +38,8 @@ const generatePodcastTracksHTML = podcast => {
 
     podcastTracksContainer.setAttribute('class', 'podcastTracksContainer');
     podcastTrackName.setAttribute('class', 'podcastTrackName');
+    podcastTrackName.innerHTML = `<strong>${track['name']}</strong>`;
+
     podcastTrackLength.setAttribute('class', 'podcastTrackLength');
     podcastTrackDate.setAttribute('class', 'podcastTrackDate');
     podcastTrackStatus.setAttribute('class', 'podcastTrackStatus');
@@ -48,5 +50,7 @@ const generatePodcastTracksHTML = podcast => {
     podcastTracksContainer.appendChild(podcastTrackDate);
     podcastTracksContainer.appendChild(podcastTrackStatus);
     podcastTrackStatus.appendChild(podcastTrackStatusIcon);
+
+    console.log(podcastTracksContainer);
   });
 };
