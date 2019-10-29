@@ -43,7 +43,10 @@ const generatePodcastTracksHTML = podcast => {
     podcastTrackStatus.setAttribute('class', 'podcastTrackStatus');
     podcastTrackStatusIcon.setAttribute('class', 'podcastTrackStatusIcon');
 
-    podcastTracksContainer.append(podcastTrackName);
-    podcastTrackName.append(podcastTrackLength);
+    podcastTracksContainer.appendChild(podcastTrackName);
+    podcastTracksContainer.appendChild(podcastTrackLength);
+    podcastTracksContainer.appendChild(podcastTrackDate);
+    podcastTracksContainer.appendChild(podcastTrackStatus);
+    podcastTrackStatus.appendChild(podcastTrackStatusIcon);
   });
 };
