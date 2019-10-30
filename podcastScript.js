@@ -29,6 +29,7 @@ const generatePodcastImgHTML = podcast => {
 
 const generatePodcastTracksHTML = podcast => {
   podcast.forEach(track => {
+    const podcastTracks = document.createElement('div');
     const podcastTracksContainer = document.createElement('div');
     const podcastTrackName = document.createElement('div');
     const podcastTrackLength = document.createElement('div');
@@ -36,21 +37,33 @@ const generatePodcastTracksHTML = podcast => {
     const podcastTrackStatus = document.createElement('div');
     const podcastTrackStatusIcon = document.createElement('i');
 
+    podcastTracks.setAttribute('class', 'podcastTracks');
+
     podcastTracksContainer.setAttribute('class', 'podcastTracksContainer');
     podcastTrackName.setAttribute('class', 'podcastTrackName');
-    podcastTrackName.innerHTML = `<strong>${track['name']}</strong>`;
+    podcastTrackName.innerHTML = `<strong>${track['title']}</strong>`;
 
     podcastTrackLength.setAttribute('class', 'podcastTrackLength');
+    podcastTrackLength.innerHTML = `${formatLength(track['audio_length_sec'])}`;
+
     podcastTrackDate.setAttribute('class', 'podcastTrackDate');
+    podcastTrackDate.innerHTML = `${track['pub_date_ms']}`;
+
     podcastTrackStatus.setAttribute('class', 'podcastTrackStatus');
-    podcastTrackStatusIcon.setAttribute('class', 'podcastTrackStatusIcon');
+    podcastTrackStatus.innerHTML = `<i class="fas fa-align-left fa-rotate-270"></i>`;
+
+    let podcastContainer = document.querySelector('.podcastContainer');
 
     podcastTracksContainer.appendChild(podcastTrackName);
     podcastTracksContainer.appendChild(podcastTrackLength);
     podcastTracksContainer.appendChild(podcastTrackDate);
     podcastTracksContainer.appendChild(podcastTrackStatus);
     podcastTrackStatus.appendChild(podcastTrackStatusIcon);
+    podcastTracks.appendChild(podcastTracksContainer);
+    podcastContainer.appendChild(podcastTracks);
 
-    console.log(podcastTracksContainer);
+    console.log(podcastTracks);
   });
 };
+
+const formatLength = s => (s - (s %= 60)) / 60 + (9 < s ? ':' : ':0') + s;
