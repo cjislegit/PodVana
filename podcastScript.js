@@ -47,7 +47,7 @@ const generatePodcastTracksHTML = podcast => {
     podcastTrackLength.innerHTML = `${formatLength(track['audio_length_sec'])}`;
 
     podcastTrackDate.setAttribute('class', 'podcastTrackDate');
-    podcastTrackDate.innerHTML = `${track['pub_date_ms']}`;
+    podcastTrackDate.innerHTML = `${new Date(track['pub_date_ms'])}`;
 
     podcastTrackStatus.setAttribute('class', 'podcastTrackStatus');
     podcastTrackStatus.innerHTML = `<i class="fas fa-align-left fa-rotate-270"></i>`;
