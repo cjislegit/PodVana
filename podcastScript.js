@@ -61,9 +61,17 @@ const generatePodcastTracksHTML = podcast => {
     podcastTrackStatus.appendChild(podcastTrackStatusIcon);
     podcastTracks.appendChild(podcastTracksContainer);
     podcastContainer.appendChild(podcastTracks);
-
-    console.log(podcastTracks);
   });
 };
 
-const formatLength = s => (s - (s %= 60)) / 60 + (9 < s ? ':' : ':0') + s;
+const formatLength = d => {
+  d = Number(d);
+  var h = Math.floor(d / 3600);
+  var m = Math.floor((d % 3600) / 60);
+  var s = Math.floor((d % 3600) % 60);
+
+  var hDisplay = h > 0 ? h + ':' : '';
+  var mDisplay = m > 0 ? m + ':' : '';
+  var sDisplay = s > 0 ? s : '';
+  return hDisplay + mDisplay + sDisplay;
+};
