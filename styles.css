@@ -189,3 +189,15 @@ main .podcastTrackLength,
 main .podcastTrackStatus {
   text-align: right;
 }
+
+/* Search  Styles */
+
+/* Search Container */
+main .searchContainer {
+  padding: 20px;
+}
+
+main .searchPodcastName {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
