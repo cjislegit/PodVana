@@ -37,3 +37,10 @@ const generateMainContentHTML = podcast => {
 const saveIdtoLocalStorage = id => {
   localStorage.setItem('objectToPass', id);
 };
+
+const seachQuery = i => {
+  let input = document.querySelector('.searchQuery').value;
+  input = input.replace(' ', '%20');
+  saveIdtoLocalStorage(input);
+  location.replace('search.html');
+};
