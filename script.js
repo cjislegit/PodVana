@@ -45,6 +45,9 @@ const seachQuery = i => {
   location.replace("search.html");
 };
 
-const checkKeyPress = key => {
+//Adds event listner to search bar and listens for enter key
+const searchPress = document.querySelector(".searchQuery");
+
+searchPress.addEventListener("keydown", key => {
   key.keyCode == 13 ? seachQuery() : null;
-};
+});
