@@ -38,7 +38,6 @@ const generatePodcastTracksHTML = podcast => {
     const podcastTrackStatusIcon = document.createElement("i");
 
     podcastTracks.setAttribute("class", "podcastTracks");
-    // podcastTracks.setAttribute("data-soundFile", `${track["audio"]}`);
     podcastTracks.setAttribute("onclick", `playTrack('${track["audio"]}')`);
 
     podcastTracksContainer.setAttribute("class", "podcastTracksContainer");
