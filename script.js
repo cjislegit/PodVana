@@ -51,3 +51,9 @@ const searchPress = document.querySelector(".searchQuery");
 searchPress.addEventListener("keydown", key => {
   key.keyCode == 13 ? seachQuery() : null;
 });
+
+//Check if audio is playing or paused and changes it
+const playAndPause = () => {
+  const player = document.querySelector("#player");
+  player.paused ? player.play() : player.pause();
+};

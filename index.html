@@ -40,16 +40,18 @@
     </main>
     <section class="nowPlaying">
       <div class="nowPlayingContainer">
-        <audio controls></audio>
-        <!-- <div class="nowPlayingArt">
+        <audio id="player" src=""></audio>
+        <div class="nowPlayingArt">
           <img src="./img/PF-liveops_InvariantCulture_Default.jpg" />
         </div>
         <div>
           <div class="nowPlayingStatus">Playing</div>
           <div class="nowPlayingName">Coding Podcast</div>
         </div>
-        <div class="nowPlayingStatusIcon"><i class="fas fa-play"></i></div>
-      </div> -->
+        <div class="nowPlayingStatusIcon">
+          <i class="fas fa-play" onclick="playAndPause()"></i>
+        </div>
+      </div>
     </section>
     <script src="script.js"></script>
   </body>

@@ -1,27 +1,27 @@
-let id = localStorage['objectToPass'];
-localStorage.removeItem('objectToPass');
+let id = localStorage["objectToPass"];
+localStorage.removeItem("objectToPass");
 
-let podcastURL = 'https://listen-api.listennotes.com/api/v2/podcasts/' + id;
+let podcastURL = "https://listen-api.listennotes.com/api/v2/podcasts/" + id;
 
 const h = new Headers();
 
-h.append('X-ListenAPI-Key', '776c9171dbbc4181aad650262761ceaa');
+h.append("X-ListenAPI-Key", "776c9171dbbc4181aad650262761ceaa");
 
 const reqPodcasts = new Request(podcastURL, {
-  method: 'GET',
+  method: "GET",
   headers: h,
-  mode: 'cors'
+  mode: "cors"
 });
 fetch(reqPodcasts)
   .then(data => data.json())
   .then(podcast => generatePodcastImgHTML(podcast));
 
 const generatePodcastImgHTML = podcast => {
-  let img = podcast['image'];
-  let episodes = podcast['episodes'];
-  const podCastImg = document.createElement('img'); //Creates img
-  podCastImg.setAttribute('src', img); //Sets src to img url
-  const podcastArt = document.querySelector('.podcastArt'); //Gets the podcast img container
+  let img = podcast["image"];
+  let episodes = podcast["episodes"];
+  const podCastImg = document.createElement("img"); //Creates img
+  podCastImg.setAttribute("src", img); //Sets src to img url
+  const podcastArt = document.querySelector(".podcastArt"); //Gets the podcast img container
   podcastArt.appendChild(podCastImg); //Adds img to the container
 
   generatePodcastTracksHTML(episodes);
@@ -29,32 +29,34 @@ const generatePodcastImgHTML = podcast => {
 
 const generatePodcastTracksHTML = podcast => {
   podcast.forEach(track => {
-    const podcastTracks = document.createElement('div');
-    const podcastTracksContainer = document.createElement('div');
-    const podcastTrackName = document.createElement('div');
-    const podcastTrackLength = document.createElement('div');
-    const podcastTrackDate = document.createElement('div');
-    const podcastTrackStatus = document.createElement('div');
-    const podcastTrackStatusIcon = document.createElement('i');
+    const podcastTracks = document.createElement("div");
+    const podcastTracksContainer = document.createElement("div");
+    const podcastTrackName = document.createElement("div");
+    const podcastTrackLength = document.createElement("div");
+    const podcastTrackDate = document.createElement("div");
+    const podcastTrackStatus = document.createElement("div");
+    const podcastTrackStatusIcon = document.createElement("i");
 
-    podcastTracks.setAttribute('class', 'podcastTracks');
+    podcastTracks.setAttribute("class", "podcastTracks");
+    podcastTracks.setAttribute("data-soundFile", `${track["audio"]}`);
+    podcastTracks.setAttribute("onclick", "playTrack()");
 
-    podcastTracksContainer.setAttribute('class', 'podcastTracksContainer');
-    podcastTrackName.setAttribute('class', 'podcastTrackName');
-    podcastTrackName.innerHTML = `<strong>${track['title']}</strong>`;
+    podcastTracksContainer.setAttribute("class", "podcastTracksContainer");
+    podcastTrackName.setAttribute("class", "podcastTrackName");
+    podcastTrackName.innerHTML = `<strong>${track["title"]}</strong>`;
 
-    podcastTrackLength.setAttribute('class', 'podcastTrackLength');
-    podcastTrackLength.innerHTML = `${formatLength(track['audio_length_sec'])}`;
+    podcastTrackLength.setAttribute("class", "podcastTrackLength");
+    podcastTrackLength.innerHTML = `${formatLength(track["audio_length_sec"])}`;
 
-    podcastTrackDate.setAttribute('class', 'podcastTrackDate');
+    podcastTrackDate.setAttribute("class", "podcastTrackDate");
     podcastTrackDate.innerHTML = `${new Date(
-      track['pub_date_ms']
-    ).toLocaleDateString('en-US')}`;
+      track["pub_date_ms"]
+    ).toLocaleDateString("en-US")}`;
 
-    podcastTrackStatus.setAttribute('class', 'podcastTrackStatus');
+    podcastTrackStatus.setAttribute("class", "podcastTrackStatus");
     podcastTrackStatus.innerHTML = `<i class="fas fa-align-left fa-rotate-270"></i>`;
 
-    let podcastContainer = document.querySelector('.podcastContainer');
+    let podcastContainer = document.querySelector(".podcastContainer");
 
     podcastTracksContainer.appendChild(podcastTrackName);
     podcastTracksContainer.appendChild(podcastTrackLength);
@@ -72,8 +74,19 @@ const formatLength = d => {
   var m = Math.floor((d % 3600) / 60);
   var s = Math.floor((d % 3600) % 60);
 
-  var hDisplay = h > 0 ? h + ':' : '';
-  var mDisplay = m > 0 ? m + ':' : '';
-  var sDisplay = s > 0 ? s : '';
+  var hDisplay = h > 0 ? h + ":" : "";
+  var mDisplay = m > 0 ? m + ":" : "";
+  var sDisplay = s > 0 ? s : "";
   return hDisplay + mDisplay + sDisplay;
+};
+
+//Check if audio is playing or paused and changes it
+const playAndPause = () => {
+  const player = document.querySelector("#player");
+  player.paused ? player.play() : player.pause();
+};
+
+//Updates sound file in audio tag and plays the file
+const playTrack = () => {
+  alert(event.target.className);
 };
