@@ -38,8 +38,8 @@ const generatePodcastTracksHTML = podcast => {
     const podcastTrackStatusIcon = document.createElement("i");
 
     podcastTracks.setAttribute("class", "podcastTracks");
-    podcastTracks.setAttribute("data-soundFile", `${track["audio"]}`);
-    podcastTracks.setAttribute("onclick", "playTrack()");
+    // podcastTracks.setAttribute("data-soundFile", `${track["audio"]}`);
+    podcastTracks.setAttribute("onclick", `playTrack('${track["audio"]}')`);
 
     podcastTracksContainer.setAttribute("class", "podcastTracksContainer");
     podcastTrackName.setAttribute("class", "podcastTrackName");
@@ -87,6 +87,6 @@ const playAndPause = () => {
 };
 
 //Updates sound file in audio tag and plays the file
-const playTrack = () => {
-  alert(event.target.className);
+const playTrack = soundFile => {
+  alert(soundFile);
 };
