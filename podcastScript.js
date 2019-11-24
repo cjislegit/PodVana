@@ -87,5 +87,7 @@ const playAndPause = () => {
 
 //Updates sound file in audio tag and plays the file
 const playTrack = soundFile => {
-  alert(soundFile);
+  const player = document.querySelector("#player");
+  player.setAttribute("src", soundFile);
+  player.play();
 };
