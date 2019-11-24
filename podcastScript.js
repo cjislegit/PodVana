@@ -82,12 +82,24 @@ const formatLength = d => {
 //Check if audio is playing or paused and changes it
 const playAndPause = () => {
   const player = document.querySelector("#player");
-  player.paused ? player.play() : player.pause();
+
+  if (player.paused) {
+    const icon = document.querySelector(".fa-play");
+    player.play();
+    icon.setAttribute("class", "fas fa-pause");
+  } else {
+    const icon = document.querySelector(".fa-pause");
+    player.pause();
+    icon.setAttribute("class", "fas fa-play");
+  }
 };
 
 //Updates sound file in audio tag and plays the file
 const playTrack = soundFile => {
   const player = document.querySelector("#player");
+  const icon = document.querySelector(".fa-play");
+  console.log(icon);
   player.setAttribute("src", soundFile);
   player.play();
+  icon.setAttribute("class", "fas fa-pause");
 };
