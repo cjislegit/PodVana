@@ -160,6 +160,7 @@ main p {
 main div.podcastContainer {
   grid-template-columns: auto;
   grid-template-rows: auto;
+  width: 100vw;
 }
 
 main .podcastArt {
@@ -173,12 +174,23 @@ main .podcastArt img {
   width: 250px;
 }
 
+main .podcastTracks {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
 main .podcastTracksContainer {
   display: grid;
   grid-template-columns: auto auto;
   grid-template-rows: auto auto;
-  width: 90vw;
+  width: 100vw;
+  max-width: 100vw;
   padding-bottom: 10px;
+}
+
+main .podcastTracksContainer div {
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 main .podcastTrackName {
