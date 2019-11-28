@@ -38,7 +38,10 @@ const generatePodcastTracksHTML = podcast => {
     const podcastTrackStatusIcon = document.createElement('i');
 
     podcastTracks.setAttribute('class', 'podcastTracks');
-    podcastTracks.setAttribute('onclick', `playTrack('${track['audio']}')`);
+    podcastTracks.setAttribute(
+      'onclick',
+      `playTrack('${track['audio']}', '${track['image']}', '${track['title']}' )`
+    );
 
     podcastTracksContainer.setAttribute('class', 'podcastTracksContainer');
     podcastTrackName.setAttribute('class', 'podcastTrackName');
@@ -85,8 +88,11 @@ const playAndPause = () => {
 
   if (player.paused) {
     const icon = document.querySelector('.fa-play');
+    const status = document.querySelector('.nowPlayingStatus');
+
     player.play();
     icon.setAttribute('class', 'fas fa-pause');
+    status.innerHTML = 'Playing';
   } else {
     const icon = document.querySelector('.fa-pause');
     const status = document.querySelector('.nowPlayingStatus');
@@ -98,13 +104,17 @@ const playAndPause = () => {
 };
 
 //Updates sound file in audio tag and plays the file
-const playTrack = soundFile => {
+const playTrack = (soundFile, imgFile, trackName) => {
   const player = document.querySelector('#player');
   const icon = document.querySelector('.fa-play');
   const status = document.querySelector('.nowPlayingStatus');
+  const name = document.querySelector('.nowPlayingName');
+  const img = document.querySelector('.nowPlayingArt img');
 
   player.setAttribute('src', soundFile);
   player.play();
   icon.setAttribute('class', 'fas fa-pause');
   status.innerHTML = 'Playing';
+  name.innerHTML = trackName;
+  img.setAttribute('src', imgFile);
 };
