@@ -108,12 +108,16 @@ const playTrack = (soundFile, imgFile, trackName) => {
   const player = document.querySelector('#player');
   const icon = document.querySelector('.fa-play');
   const status = document.querySelector('.nowPlayingStatus');
-  const name = document.querySelector('.nowPlayingName');
-  const img = document.querySelector('.nowPlayingArt img');
+  let name = document.querySelector('.nowPlayingName');
+  let img = document.querySelector('.nowPlayingArt img');
 
   player.setAttribute('src', soundFile);
   player.play();
-  icon.setAttribute('class', 'fas fa-pause');
+
+  if (icon !== null) {
+    icon.setAttribute('class', 'fas fa-pause');
+  }
+
   status.innerHTML = 'Playing';
   name.innerHTML = trackName;
   img.setAttribute('src', imgFile);
