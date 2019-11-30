@@ -115,6 +115,7 @@ const playTrack = (soundFile, imgFile, trackName) => {
   player.play();
 
   if (icon !== null) {
+    //Checks status of icon and skips if already set to pause
     icon.setAttribute('class', 'fas fa-pause');
   }
 
