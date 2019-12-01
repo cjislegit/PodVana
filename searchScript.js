@@ -19,13 +19,14 @@ fetch(reqPodcasts)
 const generateSearchContainerHTML = podcasts => {
   let searchMain = document.querySelector('.searchMain');
   podcasts['results'].forEach(podcast => {
+    let id = podcast['id'];
     const searchContainer = document.createElement('div');
     searchContainer.setAttribute('class', 'searchContainer');
-    searchContainer.innerHTML = `<div class="searchPodcastName">${
-      podcast['title_highlighted']
-    }</div><div class="searchPodcastAuthor">${
-      podcast['publisher_original']
-    }</div>`;
+    searchContainer.innerHTML = `<a id=${id} onclick=saveIdtoLocalStorage(id) href=podcast.html><div class="searchPodcastName">${podcast['title_highlighted']}</div><div class="searchPodcastAuthor">${podcast['publisher_original']}</div></a>`;
     searchMain.appendChild(searchContainer);
   });
+};
+
+const saveIdtoLocalStorage = id => {
+  localStorage.setItem('objectToPass', id);
 };
