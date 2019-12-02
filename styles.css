@@ -178,6 +178,10 @@ main .podcastTracks {
   border-top: 1px solid black;
 }
 
+main .podcastTracks:last-child {
+  border-bottom: 1px solid black;
+}
+
 main .podcastTracksContainer {
   display: grid;
   grid-template-columns: auto auto;
@@ -207,6 +211,11 @@ main .podcastTrackStatus {
 /* Search Container */
 main .searchContainer {
   padding: 20px;
+  border-top: 1px solid black;
+}
+
+main .searchContainer:last-child {
+  border-bottom: 1px solid black;
 }
 
 main .searchPodcastName {
