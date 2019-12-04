@@ -100,7 +100,6 @@ const playAndPause = () => {
     player.pause();
     icon.setAttribute("class", "fas fa-play");
     status.innerHTML = "Paused";
-    alert(player.currentTime;
   }
 };
 
