@@ -134,7 +134,8 @@ const playingTrack = () => {
     let playingTrackInfo = {
       src: player.src,
       title: title,
-      art: art
+      art: art,
+      currentTime: player.currentTime
     };
     localStorage.setItem("currentTime", JSON.stringify(playingTrackInfo));
   }

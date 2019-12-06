@@ -86,4 +86,6 @@ if (currentTime) {
   nowPlayingArt.setAttribute("src", currentTime["art"]);
   nowPlayingName.innerHTML = currentTime["title"];
   player.setAttribute("src", currentTime["src"]);
+  player.currentTime = currentTime["currentTime"];
+  player.play();
 }
