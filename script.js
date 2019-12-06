@@ -58,7 +58,17 @@ const playAndPause = () => {
   player.paused ? player.play() : player.pause();
 };
 
+//Sets curretTime to the info passed from pocast page
 let currentTime = JSON.parse(localStorage.getItem("currentTime"));
 localStorage.removeItem("currentTime");
 
-console.log(currentTime);
+//Checks if currentTime has info if so it updates the nowPlaying section
+if (currentTime) {
+  let nowPlayingArt = document.querySelector(".nowPlayingArt img");
+  let nowPlayingName = document.querySelector(".nowPlayingName");
+  let player = document.querySelector("#player");
+
+  nowPlayingArt.setAttribute("src", currentTime["art"]);
+  nowPlayingName.innerHTML = currentTime["title"];
+  player.setAttribute("src", currentTime["src"]);
+}
