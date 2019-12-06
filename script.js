@@ -58,6 +58,7 @@ const playAndPause = () => {
   player.paused ? player.play() : player.pause();
 };
 
-// let currentTime = JSON.parse(localStorage.getItem("currentTime"));
-let currentTime = JSON.parse(localStorage["currentTime"]);
+let currentTime = JSON.parse(localStorage.getItem("currentTime"));
 localStorage.removeItem("currentTime");
+
+console.log(currentTime);

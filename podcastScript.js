@@ -127,15 +127,15 @@ const playTrack = (soundFile, imgFile, trackName) => {
 // Checks if a track was played if so it stores the seconds and saves it to local storage
 const playingTrack = () => {
   const player = document.querySelector("#player");
-  const title = documet.querySelector(".nowPlayingName").textContent;
-  const art = documet.querySelector(".nowPlayingArt img").src;
+  const title = document.querySelector(".nowPlayingName").textContent;
+  const art = document.querySelector(".nowPlayingArt img").src;
+
   if (player.currentTime) {
-    // let playingTrackInfo = {
-    //   src: player.src,
-    //   title: title,
-    //   art: art
-    // };
-    // localStorage.setItem("currentTime", JSON.stringify(playingTrackInfo));
-    localStorage.setItem("currentTime", art);
+    let playingTrackInfo = {
+      src: player.src,
+      title: title,
+      art: art
+    };
+    localStorage.setItem("currentTime", JSON.stringify(playingTrackInfo));
   }
 };
