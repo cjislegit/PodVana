@@ -83,6 +83,7 @@ if (currentTime) {
   const nowPlayingName = document.querySelector(".nowPlayingName");
   const player = document.querySelector("#player");
   const icon = document.querySelector(".fa-play");
+  const status = document.querySelector(".nowPlayingStatus");
 
   nowPlayingArt.setAttribute("src", currentTime["art"]);
   nowPlayingName.innerHTML = currentTime["title"];
@@ -90,4 +91,5 @@ if (currentTime) {
   player.currentTime = currentTime["currentTime"];
   player.play();
   icon.setAttribute("class", "fas fa-pause");
+  status.innerHTML = "Playing";
 }
