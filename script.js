@@ -55,7 +55,22 @@ searchPress.addEventListener("keydown", key => {
 //Check if audio is playing or paused and changes it
 const playAndPause = () => {
   const player = document.querySelector("#player");
-  player.paused ? player.play() : player.pause();
+
+  if (player.paused) {
+    const icon = document.querySelector(".fa-play");
+    const status = document.querySelector(".nowPlayingStatus");
+
+    player.play();
+    icon.setAttribute("class", "fas fa-pause");
+    status.innerHTML = "Playing";
+  } else {
+    const icon = document.querySelector(".fa-pause");
+    const status = document.querySelector(".nowPlayingStatus");
+
+    player.pause();
+    icon.setAttribute("class", "fas fa-play");
+    status.innerHTML = "Paused";
+  }
 };
 
 //Sets curretTime to the info passed from pocast page
