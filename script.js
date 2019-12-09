@@ -22,7 +22,7 @@ const generateMainContentHTML = podcast => {
     let id = element["id"];
     mainContentPodcast.setAttribute("id", id); //Gives div id of podcast id from API
     mainContentPodcast.setAttribute("onclick", "saveIdtoLocalStorage(id)");
-    mainContentPodcast.innerHTML = `<a  href='podcast.html' ><img src="${
+    mainContentPodcast.innerHTML = `<a  onclick="playingTrack()" href='podcast.html' ><img src="${
       //Creates the inside of the div
       element["image"]
     }" /></a>
@@ -93,3 +93,20 @@ if (currentTime) {
   icon.setAttribute("class", "fas fa-pause");
   status.innerHTML = "Playing";
 }
+
+// Checks if a track was played if so it stores the seconds and saves it to local storage
+const playingTrack = () => {
+  const player = document.querySelector("#player");
+  const title = document.querySelector(".nowPlayingName").textContent;
+  const art = document.querySelector(".nowPlayingArt img").src;
+
+  if (player.currentTime) {
+    let playingTrackInfo = {
+      src: player.src,
+      title: title,
+      art: art,
+      currentTime: player.currentTime
+    };
+    localStorage.setItem("currentTime", JSON.stringify(playingTrackInfo));
+  }
+};

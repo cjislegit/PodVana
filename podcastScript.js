@@ -140,3 +140,24 @@ const playingTrack = () => {
     localStorage.setItem("currentTime", JSON.stringify(playingTrackInfo));
   }
 };
+
+//Sets curretTime to the info passed from previous page
+let currentTime = JSON.parse(localStorage.getItem("currentTime"));
+localStorage.removeItem("currentTime");
+
+//Checks if currentTime has info if so it updates the nowPlaying section
+if (currentTime) {
+  const nowPlayingArt = document.querySelector(".nowPlayingArt img");
+  const nowPlayingName = document.querySelector(".nowPlayingName");
+  const player = document.querySelector("#player");
+  const icon = document.querySelector(".fa-play");
+  const status = document.querySelector(".nowPlayingStatus");
+
+  nowPlayingArt.setAttribute("src", currentTime["art"]);
+  nowPlayingName.innerHTML = currentTime["title"];
+  player.setAttribute("src", currentTime["src"]);
+  player.currentTime = currentTime["currentTime"];
+  player.play();
+  icon.setAttribute("class", "fas fa-pause");
+  status.innerHTML = "Playing";
+}
