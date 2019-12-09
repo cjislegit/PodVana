@@ -17,7 +17,7 @@
     <header>
       <nav>
         <ul>
-          <li><a href="index.html">Podcasts</a></li>
+          <li><a onclick="playingTrack()" href="index.html">Podcasts</a></li>
           <li class="active"><a href="">Subscribed</a></li>
           <li><a href="downloads.html">Downloads</a></li>
           <li>
@@ -77,16 +77,19 @@
     </main>
     <section class="nowPlaying">
       <div class="nowPlayingContainer">
+        <audio id="player" src=""></audio>
         <div class="nowPlayingArt">
           <img src="./img/PF-liveops_InvariantCulture_Default.jpg" />
         </div>
         <div>
-          <div class="nowPlayingStatus">Playing</div>
+          <div class="nowPlayingStatus">Paused</div>
           <div class="nowPlayingName">Coding Podcast</div>
         </div>
-        <div class="nowPlayingStatusIcon"><i class="fas fa-play"></i></div>
+        <div class="nowPlayingStatusIcon">
+          <i class="fas fa-play" onclick="playAndPause()"></i>
+        </div>
       </div>
     </section>
-    <script src="script.js"></script>
+    <script src="subscribedScript.js"></script>
   </body>
 </html>
