@@ -1,3 +1,22 @@
+const saveIdtoLocalStorage = id => {
+  localStorage.setItem("objectToPass", id);
+};
+
+const seachQuery = i => {
+  let input = document.querySelector(".searchQuery").value;
+  input = input.replace(" ", "%20");
+  saveIdtoLocalStorage(input);
+  location.replace("search.html");
+  playingTrack();
+};
+
+//Adds event listner to search bar and listens for enter key
+const searchPress = document.querySelector(".searchQuery");
+
+searchPress.addEventListener("keydown", key => {
+  key.keyCode == 13 ? seachQuery() : null;
+});
+
 //Sets curretTime to the info passed from pocast page
 let currentTime = JSON.parse(localStorage.getItem("currentTime"));
 localStorage.removeItem("currentTime");
