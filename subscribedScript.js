@@ -54,3 +54,24 @@ const playingTrack = () => {
     localStorage.setItem("currentTime", JSON.stringify(playingTrackInfo));
   }
 };
+
+//Check if audio is playing or paused and changes it
+const playAndPause = () => {
+  const player = document.querySelector("#player");
+
+  if (player.paused) {
+    const icon = document.querySelector(".fa-play");
+    const status = document.querySelector(".nowPlayingStatus");
+
+    player.play();
+    icon.setAttribute("class", "fas fa-pause");
+    status.innerHTML = "Playing";
+  } else {
+    const icon = document.querySelector(".fa-pause");
+    const status = document.querySelector(".nowPlayingStatus");
+
+    player.pause();
+    icon.setAttribute("class", "fas fa-play");
+    status.innerHTML = "Paused";
+  }
+};
