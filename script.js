@@ -43,6 +43,7 @@ const seachQuery = i => {
   input = input.replace(" ", "%20");
   saveIdtoLocalStorage(input);
   location.replace("search.html");
+  playingTrack();
 };
 
 //Adds event listner to search bar and listens for enter key
