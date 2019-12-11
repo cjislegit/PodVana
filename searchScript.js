@@ -1,7 +1,7 @@
 let query = localStorage["objectToPass"];
 localStorage.removeItem("objectToPass");
 
-let searchURL = `https://listen-api.listennotes.com/api/v2/search?q=${query}&only_in=author&type=podcast`;
+let searchURL = `https://listen-api.listennotes.com/api/v2/search?q=${query}&type=podcast`;
 
 const h = new Headers();
 
