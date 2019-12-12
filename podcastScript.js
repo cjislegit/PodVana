@@ -20,9 +20,15 @@ const generatePodcastImgHTML = podcast => {
   let img = podcast["image"];
   let episodes = podcast["episodes"];
   const podCastImg = document.createElement("img"); //Creates img
-  podCastImg.setAttribute("src", img); //Sets src to img url
+  const podcastButtonsContainer = document.createElement("div");
   const podcastArt = document.querySelector(".podcastArt"); //Gets the podcast img container
+
+  podCastImg.setAttribute("src", img); //Sets src to img url
+  podcastButtonsContainer.setAttribute("class", "podcastButtonsContainer");
+  podcastButtonsContainer.innerHTML =
+    '<span onclick="sub()">Subscribe</span> &nbsp <i class="fa fa-check-square notSubbed" aria-hidden="true"></i>';
   podcastArt.appendChild(podCastImg); //Adds img to the container
+  podcastArt.appendChild(podcastButtonsContainer); //Adds buttons
 
   generatePodcastTracksHTML(episodes);
 };
@@ -161,3 +167,9 @@ if (currentTime) {
   icon.setAttribute("class", "fas fa-pause");
   status.innerHTML = "Playing";
 }
+
+//Changes styling on subscribe button
+const sub = () => {
+  let subStatus = document.querySelector(".notSubbed");
+  alert(subStatus);
+};

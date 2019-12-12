@@ -206,6 +206,15 @@ main .podcastTrackStatus {
   text-align: right;
 }
 
+/* Podcast podcastButtons Container */
+.podcastButtonsContainer {
+  margin-top: 15px;
+}
+
+.podcastButtonsContainer i {
+  color: #272f3b;
+}
+
 /* Search  Styles */
 
 /* Search Container */
