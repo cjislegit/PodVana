@@ -215,6 +215,10 @@ main .podcastTrackStatus {
   color: #272f3b;
 }
 
+.podcastButtonsContainer .subbed {
+  color: white;
+}
+
 /* Search  Styles */
 
 /* Search Container */

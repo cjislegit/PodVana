@@ -171,5 +171,7 @@ if (currentTime) {
 //Changes styling on subscribe button
 const sub = () => {
   let subStatus = document.querySelector(".notSubbed");
-  alert(subStatus);
+  if (subStatus !== null) {
+    subStatus.setAttribute("class", "fa fa-check-square subbed");
+  }
 };
