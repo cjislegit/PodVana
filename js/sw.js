@@ -1,4 +1,4 @@
-const staticCacheName = "site-static-beta-V1";
+const staticCacheName = "site-static-beta";
 const assetes = [
   "/",
   "/index.html",
@@ -37,12 +37,12 @@ self.addEventListener("activate", evt => {
   );
 });
 
-//Fetch event
-// self.addEventListener("fetch", evt => {
-//   //Checks if requested file is in cache and returns it if it is
-//   evt.respondWith(
-//     caches.match(evt.request).then(cachesRes => {
-//       return cachesRes || fetch(evt.request);
-//     })
-//   );
-// });
+// Fetch event
+self.addEventListener("fetch", evt => {
+  //Checks if requested file is in cache and returns it if it is
+  evt.respondWith(
+    caches.match(evt.request).then(cachesRes => {
+      return cachesRes || fetch(evt.request);
+    })
+  );
+});
