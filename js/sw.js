@@ -1,17 +1,17 @@
-const staticCacheName = "site-static-beta";
+const staticCacheName = "site-static-beta-V1";
 const assetes = [
   "/",
   "/index.html",
-  "/script.js",
-  "/podcast.html",
-  "/podcastScript.js",
-  "/search.html",
-  "/searchScript.js",
-  "/subscribed.html",
-  "/subscribedScript.js",
-  "/downloads.html",
-  "/downloadsScript.js",
-  "/styles.css",
+  "/js/script.js",
+  "/pages/podcast.html",
+  "/js/podcastScript.js",
+  "/pages/search.html",
+  "/js/searchScript.js",
+  "/pages/subscribed.html",
+  "/js/subscribedScript.js",
+  "/pages/downloads.html",
+  "/js/downloadsScript.js",
+  "/styles/styles.css",
   "https://fonts.googleapis.com/css?family=Lato:100,900&display=swap"
 ];
 
@@ -38,11 +38,11 @@ self.addEventListener("activate", evt => {
 });
 
 //Fetch event
-self.addEventListener("fetch", evt => {
-  //Checks if requested file is in cache and returns it if it is
-  evt.respondWith(
-    caches.match(evt.request).then(cachesRes => {
-      return cachesRes || fetch(evt.request);
-    })
-  );
-});
+// self.addEventListener("fetch", evt => {
+//   //Checks if requested file is in cache and returns it if it is
+//   evt.respondWith(
+//     caches.match(evt.request).then(cachesRes => {
+//       return cachesRes || fetch(evt.request);
+//     })
+//   );
+// });
