@@ -1,4 +1,4 @@
-const staticCacheName = "site-static";
+const staticCacheName = "site-static-beta";
 const assetes = [
   "/",
   "/index.html",
@@ -26,11 +26,20 @@ self.addEventListener("install", evt => {
 
 //Listening for activating of service worker
 self.addEventListener("activate", evt => {
-  console.log("service worker has been activated");
+  evt.waitUntil(
+    caches.keys().then(keys => {
+      return Promise.all(
+        keys
+          .filter(key => key !== staticCacheName)
+          .map(key => caches.delete(key))
+      );
+    })
+  );
 });
 
 //Fetch event
 self.addEventListener("fetch", evt => {
+  //Checks if requested file is in cache and returns it if it is
   evt.respondWith(
     caches.match(evt.request).then(cachesRes => {
       return cachesRes || fetch(evt.request);
