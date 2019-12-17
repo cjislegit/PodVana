@@ -1,15 +1,15 @@
-const staticCacheName = "site-static-beta";
+const staticCacheName = "site-static";
 const assetes = [
   "/",
   "/index.html",
   "/js/script.js",
-  "/pages/podcast.html",
+  "/podcast.html",
   "/js/podcastScript.js",
-  "/pages/search.html",
+  "/search.html",
   "/js/searchScript.js",
-  "/pages/subscribed.html",
+  "/subscribed.html",
   "/js/subscribedScript.js",
-  "/pages/downloads.html",
+  "/downloads.html",
   "/js/downloadsScript.js",
   "/styles/styles.css",
   "https://fonts.googleapis.com/css?family=Lato:100,900&display=swap"
