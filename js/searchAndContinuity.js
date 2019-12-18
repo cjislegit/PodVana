@@ -12,10 +12,12 @@ const seachQuery = i => {
 
 //Adds event listner to search bar and listens for enter key
 const searchPress = document.querySelector(".searchQuery");
-
-searchPress.addEventListener("keydown", key => {
-  key.keyCode == 13 ? seachQuery() : null;
-});
+//Only ads eventlistner if the page has a search bar
+if (searchPress !== null) {
+  searchPress.addEventListener("keydown", key => {
+    key.keyCode == 13 ? seachQuery() : null;
+  });
+}
 
 //Check if audio is playing or paused and changes it
 const playAndPause = () => {
