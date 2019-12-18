@@ -1,4 +1,4 @@
-const staticCacheName = "site-static-test";
+const staticCacheName = "site-static";
 const assetes = [
   "/",
   "/index.html",
@@ -12,7 +12,7 @@ const assetes = [
   "/pages/downloads.html",
   "/js/downloadsScript.js",
   "/styles/styles.css",
-  "/img/PF-liveops_InvariantCulture_Default.jpg"
+  "/img/PF-liveops_InvariantCulture_Default.jpg",
   "https://fonts.googleapis.com/css?family=Lato:100,900&display=swap"
 ];
 
