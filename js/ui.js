@@ -14,7 +14,7 @@ const createSubPodcast = (data, id) => {
   fetch(reqPodcasts)
     .then(data => data.json())
     .then(podcast => {
-      let html = `<div class="podCast" id="${podcast['id']}" onclick="saveIdtoLocalStorage(id)"><a href='/pages/podcast.html'>
+      let html = `<div class="podCast" id="${podcast['id']}" onclick="saveIdtoLocalStorage(id)" data-id="${id}"><a href='/pages/podcast.html'>
           <img src="${podcast['image']}" />
           <p>${podcast['title']}</p>
           </a>
