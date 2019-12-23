@@ -18,5 +18,13 @@ const addNewSub = podcastId => {
     podcastId: podcastId
   };
 
-  db.collection('subscriptions').add(newSub);
+  db.collection('subscriptions')
+    .where('podcastId', '==', podcastId)
+    .get()
+    .then(snapshot => {
+      if (snapshot.empty) {
+        db.collection('subscriptions').add(newSub);
+        return;
+      }
+    });
 };
