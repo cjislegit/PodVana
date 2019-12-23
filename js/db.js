@@ -26,5 +26,8 @@ const addNewSub = podcastId => {
         db.collection('subscriptions').add(newSub);
         return;
       }
+      db.collection('subscriptions')
+        .doc(snapshot.docs[0]['id'])
+        .delete();
     });
 };
