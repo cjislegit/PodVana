@@ -114,5 +114,8 @@ const sub = () => {
   let subStatus = document.querySelector(".notSubbed");
   if (subStatus !== null) {
     subStatus.setAttribute("class", "fa fa-check-square subbed");
+  } else {
+    subStatus = document.querySelector(".subbed");
+    subStatus.setAttribute("class", "fa fa-check-square notSubbed");
   }
 };
