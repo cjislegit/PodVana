@@ -32,3 +32,16 @@ const addNewSub = podcastId => {
     });
   sub();
 };
+
+//Check if podcast is subscribed
+const checkIfSub = podcastId => {
+  db.collection("subscriptions")
+    .where("podcastId", "==", podcastId)
+    .get()
+    .then(snapshot => {
+      if (snapshot.empty) {
+        return;
+      }
+      sub();
+    });
+};
