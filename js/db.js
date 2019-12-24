@@ -1,12 +1,12 @@
 //Real-time listener
-db.collection('subscriptions').onSnapshot(snapshot => {
+db.collection("subscriptions").onSnapshot(snapshot => {
   snapshot.docChanges().forEach(change => {
-    if (change.type == 'added') {
+    if (change.type == "added") {
       //Add podast to subsction page
       createSubPodcast(change.doc.data(), change.doc.id);
     }
 
-    if (change.type == 'remove') {
+    if (change.type == "remove") {
       //Remove podcast subsction page
     }
   });
@@ -18,16 +18,17 @@ const addNewSub = podcastId => {
     podcastId: podcastId
   };
 
-  db.collection('subscriptions')
-    .where('podcastId', '==', podcastId)
+  db.collection("subscriptions")
+    .where("podcastId", "==", podcastId)
     .get()
     .then(snapshot => {
       if (snapshot.empty) {
-        db.collection('subscriptions').add(newSub);
+        db.collection("subscriptions").add(newSub);
         return;
       }
-      db.collection('subscriptions')
-        .doc(snapshot.docs[0]['id'])
+      db.collection("subscriptions")
+        .doc(snapshot.docs[0]["id"])
         .delete();
     });
+  sub();
 };
