@@ -175,11 +175,11 @@ main .podcastArt img {
 }
 
 main .podcastTracks {
-  border-top: 1px solid black;
+  border-top: thin solid black;
 }
 
 main .podcastTracks:last-child {
-  border-bottom: 1px solid black;
+  border-bottom: thin solid black;
 }
 
 main .podcastTracksContainer {
@@ -224,11 +224,11 @@ main .podcastTrackStatus {
 /* Search Container */
 main .searchContainer {
   padding: 20px;
-  border-top: 1px solid black;
+  border-top: thin solid black;
 }
 
 main .searchContainer:last-child {
-  border-bottom: 1px solid black;
+  border-bottom: thin solid black;
 }
 
 main .searchPodcastName {
