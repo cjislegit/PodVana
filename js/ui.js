@@ -4,7 +4,7 @@ const createSubPodcast = (data, id) => {
   const h = new Headers();
   const subscribeMainContainer = document.querySelector('.mainContainer');
 
-  h.append('X-ListenAPI-Key', '776c9171dbbc4181aad650262761ceaa');
+  h.append('X-ListenAPI-Key', listenKey);
   const reqPodcasts = new Request(podcastURL, {
     method: 'GET',
     headers: h,

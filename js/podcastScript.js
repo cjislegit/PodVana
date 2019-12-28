@@ -5,7 +5,7 @@ let podcastURL = 'https://listen-api.listennotes.com/api/v2/podcasts/' + id;
 
 const h = new Headers();
 
-h.append('X-ListenAPI-Key', '776c9171dbbc4181aad650262761ceaa');
+h.append('X-ListenAPI-Key', listenKey);
 
 const reqPodcasts = new Request(podcastURL, {
   method: 'GET',

@@ -1,4 +1,4 @@
-const staticCacheName = 'site-static-test';
+const staticCacheName = 'site-static';
 const assetes = [
   '/',
   '/index.html',
