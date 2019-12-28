@@ -9,8 +9,6 @@ const assetes = [
   '/js/searchScript.js',
   '/pages/subscribed.html',
   '/js/subscribedScript.js',
-  '/pages/downloads.html',
-  '/js/downloadsScript.js',
   '/styles/styles.css',
   '/img/PF-liveops_InvariantCulture_Default.jpg',
   'https://fonts.googleapis.com/css?family=Lato:100,900&display=swap'
