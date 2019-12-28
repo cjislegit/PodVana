@@ -61,8 +61,8 @@ const generatePodcastTracksHTML = podcast => {
       track['pub_date_ms']
     ).toLocaleDateString('en-US')}`;
 
-    podcastTrackStatus.setAttribute('class', 'podcastTrackStatus');
-    podcastTrackStatus.innerHTML = `<i class="fa fa-arrow-circle-down" aria-hidden="true"></i>`;
+    // podcastTrackStatus.setAttribute('class', 'podcastTrackStatus');
+    // podcastTrackStatus.innerHTML = `<i class="fa fa-arrow-circle-down" aria-hidden="true"></i>`;
 
     let podcastContainer = document.querySelector('.podcastContainer');
 
