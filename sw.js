@@ -1,4 +1,4 @@
-const staticCacheName = "site-static";
+const staticCacheName = "site-static-test";
 const assetes = [
   "/",
   "/index.html",
@@ -11,7 +11,14 @@ const assetes = [
   "/js/subscribedScript.js",
   "/styles/styles.css",
   "/img/PF-liveops_InvariantCulture_Default.jpg",
-  "https://fonts.googleapis.com/css?family=Lato:100,900&display=swap"
+  "https://fonts.googleapis.com/css?family=Lato:100,900&display=swap",
+  "/pages/fallback.html",
+  "/js/fb.js",
+  "js/db.js",
+  "js/searchAndContinuity.js",
+  "js/ui.js",
+  "./keys.js",
+  "./manifest.json"
 ];
 
 //Install service worker
