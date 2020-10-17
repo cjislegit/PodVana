@@ -22,4 +22,6 @@
 
 # License
 
-<p>There are four things you need to do to get the app running. First clone the repo, then head on over to Listen Notes to get a free account and API key, after that go to Firebase and create a new project and set up Cloud Firestore, and finally create a new file in the PODVANA folder called keys.js. In this file create the const listenKey and set it equal to your API key. In that same file paste the firebaseConfig var from Firebase. You can now run the code on a local server. </p>
+<p>MIT License
+
+Copyright (c) 2020 Carlos J. Ramirez </p>
