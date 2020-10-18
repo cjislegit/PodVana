@@ -12,14 +12,11 @@ html {
   margin: auto;
 }
 
-html {
-  width: 100vw;
-  background-image: url('/img/photo-1557683316-973673baf926.webp');
-}
-
 @media screen and (min-height: 900px) {
   html {
     padding-top: 20px;
+    width: 100vw;
+    background-image: url('/img/photo-1557683316-973673baf926.webp');
   }
 }
 
