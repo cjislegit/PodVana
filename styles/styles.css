@@ -12,14 +12,6 @@ html {
   margin: auto;
 }
 
-@media screen and (min-height: 900px) {
-  html {
-    padding-top: 20px;
-    width: 100vw;
-    background-image: url('/img/photo-1557683316-973673baf926.webp');
-  }
-}
-
 /* Nav Styles */
 
 nav {
@@ -54,9 +46,17 @@ nav .active {
   border-top: solid #39a5a5;
 }
 
+nav .desktopLogo {
+  display: none;
+}
+
+nav .desktopSearch {
+  display: none;
+}
+
 /* Search Styles */
 
-section.search {
+.search {
   background-color: #28303b;
   width: 100%;
   box-sizing: border-box;
@@ -67,7 +67,7 @@ section.search {
   padding-bottom: 15px;
 }
 
-section div.searchBar {
+.search div.searchBar {
   background-color: #64667f;
   border-radius: 50px;
   width: 75%;
@@ -77,7 +77,7 @@ section div.searchBar {
   box-sizing: border-box;
 }
 
-section div.searchBar input {
+.search div.searchBar input {
   background-color: #64667f;
   border: none;
   height: 100%;
@@ -88,7 +88,7 @@ section div.searchBar input {
   outline: none;
 }
 
-section div:last-child {
+.search div:last-child {
   display: grid;
   align-items: center;
 }
@@ -275,4 +275,72 @@ main .searchContainer a {
 .mainContainer .podCast a {
   text-decoration: none;
   color: inherit;
+}
+
+@media screen and (min-height: 900px) {
+  html {
+    padding-top: 20px;
+    width: 100vw;
+    background-image: url('/img/photo-1557683316-973673baf926.webp');
+  }
+
+  body {
+    width: 90vw;
+  }
+
+  /* Nav Styles */
+
+  nav {
+    background-color: white;
+    color: black;
+    display: grid;
+    grid-template-columns: auto auto auto;
+  }
+
+  nav .desktopLogo {
+    display: block;
+  }
+
+  nav .desktopSearch {
+    display: block;
+  }
+
+  /* Search Syles */
+
+  .search {
+    background-color: white;
+    width: 100%;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 90% 10%;
+    margin: 0 auto;
+    padding-top: 25px;
+    padding-bottom: 15px;
+  }
+
+  .search div.searchBar {
+    background-color: red;
+    border-radius: 50px;
+    width: 75%;
+    justify-self: center;
+    height: 35px;
+    padding-left: 15px;
+    box-sizing: border-box;
+  }
+
+  .search div.searchBar input {
+    background-color: red;
+    border: none;
+    height: 100%;
+    width: 90%;
+    border-radius: 50px;
+    box-sizing: border-box;
+    color: inherit;
+    outline: none;
+  }
+
+  .search div:last-child {
+    display: grid;
+    align-items: center;
+  }
 }

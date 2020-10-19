@@ -21,6 +21,7 @@
   <body>
     <header>
       <nav>
+        <div class="desktopLogo">PodVana</div>
         <ul>
           <li class="active"><a href="">Podcasts</a></li>
           <li>
@@ -29,9 +30,22 @@
             >
           </li>
         </ul>
+        <div class="desktopSearch search">
+          <div class="searchBar">
+            <i class="fas fa-search"></i>
+            <input
+              class="searchQuery"
+              type="text"
+              onkeypress="checkKeyPress()"
+            />
+          </div>
+          <div>
+            <i class="fas fa-sync-alt" onclick="seachQuery()"></i>
+          </div>
+        </div>
       </nav>
     </header>
-    <section class="search">
+    <div class="search">
       <div class="searchBar">
         <i class="fas fa-search"></i>
         <input class="searchQuery" type="text" onkeypress="checkKeyPress()" />
@@ -39,7 +53,7 @@
       <div>
         <i class="fas fa-sync-alt" onclick="seachQuery()"></i>
       </div>
-    </section>
+    </div>
     <main>
       <div class="mainContainer mainContainerPodcasts">
         <div class="offline">You are currently offline, please reconnect</div>
