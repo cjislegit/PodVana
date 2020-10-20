@@ -295,6 +295,8 @@ main .searchContainer a {
     color: black;
     display: grid;
     grid-template-columns: auto auto auto;
+    height: 70px;
+    font-weight: 900;
   }
 
   nav .desktopLogo {
@@ -303,6 +305,9 @@ main .searchContainer a {
 
   nav .desktopSearch {
     display: grid;
+    padding: 0;
+    justify-self: center;
+    align-self: center;
   }
 
   /* Search Syles */
@@ -310,6 +315,24 @@ main .searchContainer a {
   nav .search {
     background-color: white;
     border: black;
+  }
+
+  nav .desktopLogo {
+    align-self: center;
+    justify-self: center;
+  }
+
+  nav ul {
+    padding: 0;
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto auto;
+  }
+
+  nav ul li {
+    justify-self: center;
+    align-self: center;
+    padding: 0;
   }
 
   nav .search div.searchBar {
