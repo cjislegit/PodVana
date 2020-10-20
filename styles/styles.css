@@ -302,45 +302,27 @@ main .searchContainer a {
   }
 
   nav .desktopSearch {
-    display: block;
+    display: grid;
   }
 
   /* Search Syles */
 
-  .search {
+  nav .search {
     background-color: white;
-    width: 100%;
-    box-sizing: border-box;
-    display: grid;
-    grid-template-columns: 90% 10%;
-    margin: 0 auto;
-    padding-top: 25px;
-    padding-bottom: 15px;
+    border: black;
   }
 
-  .search div.searchBar {
-    background-color: red;
-    border-radius: 50px;
-    width: 75%;
-    justify-self: center;
-    height: 35px;
-    padding-left: 15px;
-    box-sizing: border-box;
+  nav .search div.searchBar {
+    background-color: white;
+    border: black solid;
+    grid-template-columns: 10% auto;
   }
 
-  .search div.searchBar input {
-    background-color: red;
-    border: none;
-    height: 100%;
-    width: 90%;
-    border-radius: 50px;
-    box-sizing: border-box;
-    color: inherit;
-    outline: none;
+  nav .search div.searchBar input {
+    background-color: white;
   }
 
-  .search div:last-child {
-    display: grid;
-    align-items: center;
+  .search {
+    display: none;
   }
 }
