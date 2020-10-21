@@ -361,6 +361,12 @@ main .searchContainer a {
   main {
     background-color: white;
     border-radius: 0 0 15px 15px;
+    display: grid;
+    grid-template-columns: 30% auto;
+  }
+
+  main .nowPlaying {
+    display: grid;
   }
 
   .nowPlaying {
