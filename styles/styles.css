@@ -345,6 +345,10 @@ main .searchContainer a {
     background-color: white;
   }
 
+  nav .active {
+    border-top: none;
+  }
+
   .search {
     display: none;
   }
