@@ -288,6 +288,10 @@ main .searchContainer a {
     width: 90vw;
   }
 
+  header {
+    border-radius: 15px 15px 0 0;
+  }
+
   /* Nav Styles */
 
   nav {
@@ -297,6 +301,7 @@ main .searchContainer a {
     grid-template-columns: auto auto auto;
     height: 70px;
     font-weight: 900;
+    border-radius: 15px 15px 0 0;
   }
 
   nav .desktopLogo {
@@ -350,6 +355,15 @@ main .searchContainer a {
   }
 
   .search {
+    display: none;
+  }
+
+  main {
+    background-color: white;
+    border-radius: 0 0 15px 15px;
+  }
+
+  .nowPlaying {
     display: none;
   }
 }
