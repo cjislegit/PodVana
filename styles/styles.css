@@ -161,7 +161,7 @@ main p {
   text-align: center;
 }
 
-@media screen and (min-height: 900px) {
+@media screen and (min-width: 900px) {
   .nowPlaying {
     position: relative;
   }
@@ -277,7 +277,7 @@ main .searchContainer a {
   color: inherit;
 }
 
-@media screen and (min-height: 900px) {
+@media screen and (min-width: 900px) {
   html {
     padding-top: 20px;
     width: 100vw;
@@ -380,6 +380,7 @@ main .searchContainer a {
     width: 100%;
     align-content: center;
     justify-content: center;
+    position: relative;
   }
 
   main .nowPlayingArt {
@@ -390,16 +391,33 @@ main .searchContainer a {
   main .nowPlaying img {
     width: 300px;
     height: 300px;
+    border-radius: 15px 15px;
+  }
+
+  main .nowPlayingStatusIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    margin: auto;
+    position: absolute;
+    bottom: 40px;
+    left: 220px;
+    box-shadow: 1px 1px 6px grey;
   }
 
   main .fa-play {
     color: black;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    justify-self: center;
+    align-self: center;
   }
 
   main .nowPlayingText {
     text-align: center;
+    margin-top: 50px;
   }
 
   main .nowPlayingStatus {
