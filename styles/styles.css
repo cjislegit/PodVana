@@ -405,7 +405,7 @@ main .searchContainer a {
     margin: auto;
     position: absolute;
     bottom: 40px;
-    left: 220px;
+    left: 40%;
     box-shadow: 1px 1px 6px grey;
   }
 
