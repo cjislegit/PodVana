@@ -364,6 +364,7 @@ main .searchContainer a {
     display: grid;
     grid-template-columns: 30% auto;
     color: black;
+    font-weight: 900;
   }
 
   main .nowPlaying {
